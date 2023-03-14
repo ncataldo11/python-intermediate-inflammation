@@ -130,3 +130,4 @@ def test_patient_normalise(test, expected):
     from inflammation.models import patient_normalise
     npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
 
+
