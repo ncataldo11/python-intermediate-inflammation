@@ -76,3 +76,22 @@ def test_patient_normalise(test, expected):
     npt.assert_almost_equal(patient_normalise(np.array(test)), np.array(expected), decimal=2)
 
 
+@pytest.mark.parametrize(
+    "test, expected",
+    [
+        (
+            [[0, 0, 0], [0, 0, 0], [0, 0, 0]],
+            [0, 0, 0],
+        ),
+        (
+            [[1, 1, 1], [1, 1, 1], [1, 1, 1]],
+            [0, 0, 0],
+        ),
+        (
+            [[1, 2, 3], [3, 2, 1], [1, 1, 1]],
+            [0.94280904, 0.47140452, 0.94280904],
+        ),
+    ])
+def test_daily_std(test, expected):
+    from inflammation.models import daily_sd
+    npt.assert_almost_equal(daily_sd(np.array(test)), np.array(expected), decimal=2)
