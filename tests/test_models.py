@@ -93,5 +93,6 @@ def test_patient_normalise(test, expected):
         ),
     ])
 def test_daily_std(test, expected):
+    print("test")
     from inflammation.models import daily_sd
     npt.assert_almost_equal(daily_sd(np.array(test)), np.array(expected), decimal=2)
