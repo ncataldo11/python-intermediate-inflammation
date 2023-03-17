@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "inflammation"
+version = "1.0.0"
+description = "Analyse patient inflammation data"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python3 = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
